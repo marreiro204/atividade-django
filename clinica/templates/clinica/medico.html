@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Lista de Médicos{% endblock %}
+
+{% block content %}
+<h2>Lista de Médicos</h2>
+<a href="{% url 'medico_create' %}">Adicionar Médico</a>
+    {% for medico in medicos %}
+        <li>
+            <strong>{{ medico.nome }}</strong> - {{ medico.especialidade }} (CRM: {{ medico.crm }})
+            - <a href="{% url 'medico_update' medico.pk %}">Editar</a>
+            - <a href="{% url 'medico_delete' medico.pk %}">Excluir</a>
+        </li>
+    {% empty %}
+        <li>Nenhum médico cadastrado.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content%}

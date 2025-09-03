@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Buscar Especialidade{% endblock %}
+
+{% block content %}
+<h2>Buscar Médicos por Especialidade</h2>
+
+<form method="get" action="{% url 'especialidade' %}">
+    <label for="especialidade">Especialidade:</label>
+    <input type="text" name="especialidade" id="especialidade">
+    <button type="submit">Buscar</button>
+</form>
+{% endblock %}

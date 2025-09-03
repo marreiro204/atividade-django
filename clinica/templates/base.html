@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema Médico{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Consultas Médicas</h1>
+        <nav>
+            <a href="{% url 'medico_list' %}">Médicos</a>
+            <a href="{% url 'especialidade' %}">Especialidades</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sistema Médico</p>
+    </footer>
+</body>
+</html>

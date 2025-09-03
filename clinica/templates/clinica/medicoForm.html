@@ -1,0 +1,17 @@
+<form method="post">
+    {% csrf_token %}
+    <p>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" value="{{ medico.nome|default_if_none:'' }}">
+    </p>
+    <p>
+        <label for="especialidade">Especialidade:</label><br>
+        <input type="text" id="especialidade" name="especialidade" value="{{ medico.especialidade|default_if_none:'' }}">
+    </p>
+    <p>
+        <label for="crm">CRM:</label><br>
+        <input type="text" id="crm" name="crm" value="{{ medico.crm|default_if_none:'' }}">
+    </p>
+    <button type="submit">Salvar</button>
+</form>
+
