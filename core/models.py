@@ -1,8 +1,15 @@
 from django.db import models
 
+# MATHEUS DA SILVA VITORIANO
+class Especialidade(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+    
 class Medico(models.Model):
     nome = models.CharField(max_length=100)
-    especialidade = models.CharField(max_length=50)
+    especialidade = models.ForeignKey(Especialidade, on_delete=models.CASCADE)
     crm = models.CharField(max_length=20, unique=True)
 
     def __str__(self):

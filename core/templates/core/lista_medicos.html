@@ -1,0 +1,24 @@
+
+{% block content %}
+<h2>Lista de Médicos</h2>
+
+<table border="1">
+  <tr>
+    <th>Nome</th>
+    <th>CRM</th>
+    <th>Especialidade</th>
+  </tr>
+  {% for medico in medicos %}
+  <tr>
+    <td>{{ medico.nome }}</td>
+    <td>{{ medico.crm }}</td>
+    <td>{{ medico.especialidade.nome }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% if perms.clinica.add_medico %}
+  <a href="{% url 'cadastrar_medico' %}">Cadastrar novo médico</a>
+{% endif %}
+
+{% endblock %}

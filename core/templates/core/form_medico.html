@@ -1,0 +1,19 @@
+
+{% block content %}
+<h2>Cadastrar Médico</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <p>Nome: <input type="text" name="nome" required></p>
+  <p>CRM: <input type="text" name="crm" required></p>
+  <p>Especialidade:
+    <select name="especialidade" required>
+      {% for esp in especialidades %}
+      <option value="{{ esp.id }}">{{ esp.nome }}</option>
+      {% endfor %}
+    </select>
+  </p>
+  <button type="submit">Salvar</button>
+</form>
+
+{% endblock %}
